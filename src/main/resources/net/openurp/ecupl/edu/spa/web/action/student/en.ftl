@@ -30,17 +30,13 @@
           </tr>
         </table>
 
-     <div style="float:right;width:110mm;">
-     <table>
-       <tr><td>
+     <div style="float:right;width:100mm;">
          <p style="margin-top:60px">
-         <span style="font-size:16pt;letter-spacing:2px;text-align:right;display:block">Academic Affairs Office&nbsp;&nbsp;&nbsp;&nbsp;</span>
-         <span style="FONT-SIZE: 10pt; letter-spacing:1px;text-align:right;display:block">East China University of Political Science and Law&nbsp;&nbsp;</span>
-         <span style="FONT-SIZE: 10pt; letter-spacing: 1px;text-align:right;display:block">${b.now?string("yyyy-MM-dd")}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+         <span style="font-size:16pt;letter-spacing:2px;text-align:center;display:block">Academic Affairs Office</span>
+         <span style="FONT-SIZE: 10pt; letter-spacing:1px;text-align:center;display:block">East China University of Political Science and Law</span>
+         <span style="FONT-SIZE: 10pt; letter-spacing: 1px;text-align:center;display:block">${b.now?string("yyyy-MM-dd")}</span>
          </p>
-        <img src="${b.static_url('urp','images/student_sig2.png')}" style="height:42mm;width:42mm;margin-left: 150px;margin-top: -120px;"/>
-       </td></tr>
-     </table>
+        <img src="${b.static_url('urp','images/student_sig2.png')}" style="height:42mm;width:42mm;margin-left: 30mm;margin-top: -120px;"/>
      </div>
   </div>
 [@b.foot/]
