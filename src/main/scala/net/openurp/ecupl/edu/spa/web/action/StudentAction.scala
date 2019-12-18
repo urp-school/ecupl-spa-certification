@@ -18,13 +18,14 @@
  */
 package net.openurp.ecupl.edu.spa.web.action
 
+import java.text.SimpleDateFormat
+
+import org.beangle.commons.lang.Strings
 import org.beangle.webmvc.api.action.ActionSupport
 import org.beangle.webmvc.api.view.View
 import org.beangle.webmvc.entity.action.EntityAction
 import org.openurp.edu.base.model.Student
 import org.openurp.edu.boot.web.ProjectSupport
-import java.text.SimpleDateFormat
-import org.openurp.base.model.Person
 
 class StudentAction extends ActionSupport with EntityAction[Student] with ProjectSupport {
 
@@ -52,8 +53,9 @@ class StudentAction extends ActionSupport with EntityAction[Student] with Projec
 
   private def getGrade(std: Student): Int = {
     val format = new SimpleDateFormat("yyyyMM")
-    val year = std.beginOn.getYear
-    val month = std.beginOn.getMonth.getValue
+    val state = std.state.get
+    val year = Integer.parseInt(Strings.substringBefore(state.grade, "-"))
+    val month = Integer.parseInt(Strings.substringAfter(state.grade, "-"))
     val date = format.format(new java.util.Date)
     val y = Integer.parseInt(date.substring(0, 4))
     val m = Integer.parseInt(date.substring(4))

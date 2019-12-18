@@ -18,7 +18,7 @@
   [/#if]
 [/#function]
 
-[#if grade>0]
+[#if grade=4 || grade > 4]
 This is to certify that ${(std.person.phoneticName)!"__"} is a registered full time student of th[#t/]
 e School of ${(std.state.department.enName)!("___")} of this university. This student has completed nearl[#t/]
 y all the courses in ${getMajor(std)} and, in line with regulations by the Ministry of Education[#t/]
