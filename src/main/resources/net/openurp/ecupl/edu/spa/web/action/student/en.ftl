@@ -17,33 +17,30 @@
           <tr>
             <td ALIGN="CENTER">
               <div align='center'><img src="${b.static_url('urp','images/banner_long.png')}" style="height:25.5mm;width:183mm"/></div>
-              <div style="width: 610px; height: 622px; text-align: center;">
+              <div style="padding:0mm 10mm 0mm 10mm; height: 622px; text-align: center;">
                 <h1 ALIGN="CENTER">
                   <span style="letter-spacing: 2px">Certification</span>
                 </h1>
                 <p>&nbsp;</p>
                 <div style="text-align: left; text-indent: 3em;">
-                  <p ALIGN="left"
-                    style="margin-top:10px;FONT-SIZE:${fontSize}px;line-height:${lineheight}%;letter-spacing:1px;">
                     [#include "cert_en.ftl"/]
-                   </p>
                 </div>
               </div>
             </td>
           </tr>
         </table>
 
-     <div style="float:right">
+     <div style="float:right;width:110mm;">
      <table>
        <tr><td>
          <p style="margin-top:60px">
-         <span style="font-size:${fontSize}px;letter-spacing:2px;text-align:right;display:block">Academic Affairs Office&nbsp;&nbsp;&nbsp;&nbsp;</span>
-         <span style="FONT-SIZE: 15px; letter-spacing:1px;text-align:right;display:block">East China University of Political Science and Law&nbsp;&nbsp;&nbsp;&nbsp;</span>
-         <span style="FONT-SIZE: 15px; letter-spacing: 1px;text-align:right;display:block">${b.now?string("yyyy-MM-dd")}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+         <span style="font-size:16pt;letter-spacing:2px;text-align:right;display:block">Academic Affairs Office&nbsp;&nbsp;&nbsp;&nbsp;</span>
+         <span style="FONT-SIZE: 10pt; letter-spacing:1px;text-align:right;display:block">East China University of Political Science and Law&nbsp;&nbsp;</span>
+         <span style="FONT-SIZE: 10pt; letter-spacing: 1px;text-align:right;display:block">${b.now?string("yyyy-MM-dd")}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
          </p>
-        <img src="${b.static_url('urp','images/student_sig2.png')}" style="height:42mm;width:42mm;margin-left: 200px;margin-top: -120px;"/>
+        <img src="${b.static_url('urp','images/student_sig2.png')}" style="height:42mm;width:42mm;margin-left: 150px;margin-top: -120px;"/>
        </td></tr>
      </table>
      </div>
-  <div>
+  </div>
 [@b.foot/]

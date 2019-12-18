@@ -17,14 +17,12 @@
       <tr>
         <td ALIGN="CENTER">
          <div align='center'><img src="${b.static_url('urp','images/banner_long.png')}" style="height:25.5mm;width:183mm"/></div>
-         <div style="width:610px;height:722px;text-align:center;">
+         <div style="padding:0mm 10mm 0mm 10mm;height:722px;text-align:center;">
             <h1 ALIGN="CENTER"><span style="letter-spacing:20px">在读证明</span></h1>
             <p>&nbsp;</p>
             <div style="text-align:left;text-indent:3em;">
-            <p ALIGN="left" style="margin-top:10px;FONT-SIZE:20px;line-height:65px;letter-spacing:5px;">
                 [#include "cert_zh.ftl"/]
-            </p>
-                <p ALIGN="left"><span style="FONT-SIZE:20px;letter-spacing:5px;float:left;">特此证明</span></p>
+                <p ALIGN="left"><span style="font-size:15pt;letter-spacing:5px;float:left;">特此证明</span></p>
             <p>&nbsp;</p>
             <p>&nbsp;</p>
             <p>&nbsp;</p>
@@ -37,10 +35,10 @@
      <div style="float:right">
      <table>
        <tr><td>
-         <p style="margin-top:60px"><span style="font-size:20px;letter-spacing:5px;">${b.now?string('yyyy年MM月dd日')}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+         <p style="margin-top:60px"><span style="font-size:15pt;letter-spacing:5px;">${b.now?string('yyyy年MM月dd日')}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
         <img src="${b.static_url('urp','images/student_sig2.png')}" style="height:42mm;width:42mm;margin-left: 10px;margin-top: -120px;"/>
        </td></tr>
      </table>
      </div>
-  <div>
+  </div>
 [@b.foot/]

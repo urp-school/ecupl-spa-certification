@@ -41,13 +41,6 @@ class StudentAction extends ActionSupport with EntityAction[Student] with Projec
     val grade = getGrade(std)
     put("grade", grade)
     put("std", std)
-    if (grade >= 4) {
-      put("lineheight", 140)
-      put("fontSize", 20)
-    } else {
-      put("lineheight", 230)
-      put("fontSize", 22)
-    }
     forward()
   }
 
