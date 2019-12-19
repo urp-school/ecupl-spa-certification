@@ -36,7 +36,7 @@
      <table>
        <tr><td>
          <p style="margin-top:60px"><span style="font-size:15pt;letter-spacing:5px;">${b.now?string('yyyy年MM月dd日')}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
-        <img src="${b.static_url('urp','images/student_sig2.png')}" style="height:42mm;width:42mm;margin-left: 10px;margin-top: -120px;"/>
+        <img src="${b.static_url('urp','images/student_sig2.png')}" style="height:42mm;width:42mm;margin-left: 10mm;margin-top: -120px;"/>
        </td></tr>
      </table>
      </div>
