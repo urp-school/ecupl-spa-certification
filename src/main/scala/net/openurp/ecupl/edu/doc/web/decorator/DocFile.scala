@@ -16,13 +16,32 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.openurp.ecupl.edu.spa.web.action
+package net.openurp.ecupl.edu.doc.web.decorator
 
-import org.beangle.webmvc.api.action.ActionSupport
-import org.openurp.edu.boot.web.ProjectSupport
-import org.beangle.webmvc.entity.action.EntityAction
-import org.openurp.edu.grade.course.model.CourseGrade
+import org.beangle.commons.lang.Strings
+import org.beangle.commons.io.Files
+import org.beangle.commons.lang.SystemInfo
+import java.io.File
+import org.beangle.security.Securities
 
-class TranscriptAction extends ActionSupport with EntityAction[CourseGrade] with ProjectSupport {
+object DocFile {
+  private def fileName(path: String): String = {
+    var fileName =
+      if (path.contains("/")) {
+        Strings.substringAfterLast(path, "/")
+      } else {
+        path
+      }
+    fileName = Strings.replace(fileName, ".pdf", "")
+    fileName + "_" + Securities.user
+  }
+
+  def html(path: String): File = {
+    new File(SystemInfo.tmpDir + Files./ + fileName(path) + ".html")
+  }
+
+  def pdf(path: String): File = {
+    new File(SystemInfo.tmpDir + Files./ + fileName(path) + ".pdf")
+  }
 
 }

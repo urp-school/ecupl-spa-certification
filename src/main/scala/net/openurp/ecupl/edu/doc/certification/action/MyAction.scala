@@ -16,17 +16,29 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.openurp.ecupl.edu.spa.web
+package net.openurp.ecupl.edu.doc.certification.action
 
-import net.openurp.ecupl.edu.spa.web.action.{StudentAction, TranscriptAction}
-import net.openurp.ecupl.edu.spa.web.decorator.WkPdfGenerator
-import org.beangle.cdi.bind.BindModule
+import net.openurp.ecupl.edu.doc.certification.service.GradeConverter
+import org.beangle.webmvc.api.action.ActionSupport
+import org.beangle.webmvc.api.view.View
+import org.beangle.webmvc.entity.action.EntityAction
+import org.openurp.edu.base.model.Student
+import org.openurp.edu.base.web.ProjectSupport
 
-class DefaultModule extends BindModule {
+class MyAction extends ActionSupport with EntityAction[Student] with ProjectSupport {
 
-  protected override def binding(): Unit = {
-    bind(classOf[StudentAction])
-    bind(classOf[TranscriptAction])
-    bind("web.Decorator.wkpdf", classOf[WkPdfGenerator])
+  def zh(): View = {
+    val std = getStudent
+    put("grade", GradeConverter.getGrade(std))
+    put("std", std)
+    forward("../zh")
   }
+
+  def en(): View = {
+    val std = getStudent
+    put("grade",  GradeConverter.getGrade(std))
+    put("std", std)
+    forward("../en")
+  }
+
 }

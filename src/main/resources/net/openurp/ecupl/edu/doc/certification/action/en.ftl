@@ -10,6 +10,11 @@
     <meta http-equiv="expires" content="0"/>
     <meta http-equiv="content-style-type" content="text/css"/>
     <meta http-equiv="content-script-type" content="text/javascript"/>
+    <style>
+    body{
+      font-family:"Microsoft YaHei"
+    }
+    </style>
  </head>
  <body style="padding:5mm 10mm 0mm 10mm">
  <div style="width:100%" class="gradePage">

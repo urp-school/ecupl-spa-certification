@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <mvc>
-  <profile name="openurp-edu-spa-student" package="net.openurp.ecupl.edu.spa.web.action">
+  <profile name="openurp-edu-spa-student" package="net.openurp.ecupl.edu.doc.certification.action">
     <url path="/" suffix=""  style="seo" />
     <interceptors>
       <interceptor name="web.Interceptor.hibernate"/>

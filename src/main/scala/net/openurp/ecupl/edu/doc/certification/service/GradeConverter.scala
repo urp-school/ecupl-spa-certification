@@ -16,32 +16,36 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.openurp.ecupl.edu.spa.web.decorator
+package net.openurp.ecupl.edu.doc.certification.service
+
+import java.text.SimpleDateFormat
 
 import org.beangle.commons.lang.Strings
-import org.beangle.commons.io.Files
-import org.beangle.commons.lang.SystemInfo
-import java.io.File
-import org.beangle.security.Securities
+import org.openurp.edu.base.model.Student
 
-object DocFile {
-  private def fileName(path: String): String = {
-    var fileName =
-      if (path.contains("/")) {
-        Strings.substringAfterLast(path, "/")
+object GradeConverter {
+
+  def toGrade(gradeStr: String): Int = {
+    val format = new SimpleDateFormat("yyyyMM")
+    val year = Integer.parseInt(Strings.substringBefore(gradeStr, "-"))
+    val month = Integer.parseInt(Strings.substringAfter(gradeStr, "-"))
+    val date = format.format(new java.util.Date)
+    val y = Integer.parseInt(date.substring(0, 4))
+    val m = Integer.parseInt(date.substring(4))
+    var grade = 1
+    if (year == y) {
+      grade = 1
+    } else if (y > year) {
+      if (m >= month) {
+        grade = y - year + 1
       } else {
-        path
+        grade = y - year
       }
-    fileName = Strings.replace(fileName, ".pdf", "")
-    fileName + "_" + Securities.user
+    }
+    grade
   }
 
-  def html(path: String): File = {
-    new File(SystemInfo.tmpDir + Files./ + fileName(path) + ".html")
+  def getGrade(std: Student): Int = {
+    toGrade(std.state.get.grade)
   }
-
-  def pdf(path: String): File = {
-    new File(SystemInfo.tmpDir + Files./ + fileName(path) + ".pdf")
-  }
-
 }
