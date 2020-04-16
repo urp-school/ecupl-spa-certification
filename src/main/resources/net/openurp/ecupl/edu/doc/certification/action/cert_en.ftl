@@ -26,7 +26,7 @@ y all the courses in ${getMajor(std)} and, in line with regulations by the Minis
 , is to be awarded a diploma of graduation in ${std.graduateOn?string("MMMMM, yyyy")} upon completion [#t/]
  of ${getApp(std.person.gender)} graduation thesis. This student is working on the courses of ${getApp(std.person.gender)} last year of study and[#t/]
 , in line with the degree regulations of this university[#t/]
-, is to be awarded a degree of ${(std.program.degree.enName)!"__"} upon completion of all the courses req[#t/]
+, is to be awarded a degree of ${(program.degree.enName)!"__"} upon completion of all the courses req[#t/]
 uired with GPA of compulsory courses above 2.0 points.
 </p>
 [#else]

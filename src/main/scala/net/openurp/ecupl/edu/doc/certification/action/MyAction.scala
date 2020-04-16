@@ -19,11 +19,14 @@
 package net.openurp.ecupl.edu.doc.certification.action
 
 import net.openurp.ecupl.edu.doc.certification.service.GradeConverter
+import org.beangle.data.dao.OqlBuilder
 import org.beangle.webmvc.api.action.ActionSupport
 import org.beangle.webmvc.api.view.View
 import org.beangle.webmvc.entity.action.EntityAction
 import org.openurp.edu.base.model.Student
 import org.openurp.edu.base.web.ProjectSupport
+import org.openurp.edu.program.domain.DefaultProgramMatcher
+import org.openurp.edu.program.model.Program
 
 class MyAction extends ActionSupport with EntityAction[Student] with ProjectSupport {
 
@@ -31,14 +34,31 @@ class MyAction extends ActionSupport with EntityAction[Student] with ProjectSupp
     val std = getStudent
     put("grade", GradeConverter.getGrade(std))
     put("std", std)
+    put("program", getProgram(std))
     forward("../zh")
   }
 
   def en(): View = {
     val std = getStudent
-    put("grade",  GradeConverter.getGrade(std))
+    put("grade", GradeConverter.getGrade(std))
     put("std", std)
+    put("program", getProgram(std))
     forward("../en")
+  }
+
+
+  private def getProgram(std: Student): Option[Program] = {
+    std.state match {
+      case None => None
+      case Some(state) =>
+        val query = OqlBuilder.from(classOf[Program], "p")
+        query.where("p.grade=:grade", state.grade)
+        query.where("p.department=:department", state.department)
+        query.where("p.major=:major", state.major)
+        query.where("p.level=:level", std.level)
+        val ps = entityDao.search(query)
+        ps.filter(DefaultProgramMatcher.isMatched(_, state)).headOption
+    }
   }
 
 }
