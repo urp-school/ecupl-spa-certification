@@ -16,12 +16,12 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.openurp.ecupl.edu.doc.certification.service
+package net.openurp.ecupl.spa.doc.certification.service
 
 import java.text.SimpleDateFormat
 
 import org.beangle.commons.lang.Strings
-import org.openurp.edu.base.model.Student
+import org.openurp.base.edu.model.Student
 
 object GradeConverter {
 

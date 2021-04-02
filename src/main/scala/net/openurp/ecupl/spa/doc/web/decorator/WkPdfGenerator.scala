@@ -16,9 +16,9 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.openurp.ecupl.edu.doc.web.decorator
+package net.openurp.ecupl.spa.doc.web.decorator
 
-import javax.servlet.http.{HttpServletRequest, HttpServletResponse}
+import jakarta.servlet.http.{HttpServletRequest, HttpServletResponse}
 import org.beangle.webmvc.view.ViewDecorator
 import org.beangle.webmvc.api.context.ActionContext
 import org.beangle.webmvc.view.ViewResult

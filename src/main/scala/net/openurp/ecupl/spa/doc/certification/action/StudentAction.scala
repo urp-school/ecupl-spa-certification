@@ -16,16 +16,16 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.openurp.ecupl.edu.doc.certification.action
+package net.openurp.ecupl.spa.doc.certification.action
 
-import net.openurp.ecupl.edu.doc.certification.service.GradeConverter
+import net.openurp.ecupl.spa.doc.certification.service.GradeConverter
 import org.beangle.data.dao.OqlBuilder
 import org.beangle.webmvc.api.action.ActionSupport
 import org.beangle.webmvc.api.annotation.{action, param}
 import org.beangle.webmvc.api.view.{Status, View}
 import org.beangle.webmvc.entity.action.EntityAction
-import org.openurp.edu.base.model.Student
-import org.openurp.edu.web.ProjectSupport
+import org.openurp.base.edu.model.Student
+import org.openurp.boot.edu.helper.ProjectSupport
 import org.openurp.edu.program.domain.DefaultProgramMatcher
 import org.openurp.edu.program.model.Program
 

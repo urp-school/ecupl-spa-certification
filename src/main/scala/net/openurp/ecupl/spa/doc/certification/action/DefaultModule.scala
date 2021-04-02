@@ -16,32 +16,16 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.openurp.ecupl.edu.doc.web.decorator
+package net.openurp.ecupl.spa.doc.certification.action
 
-import org.beangle.commons.lang.Strings
-import org.beangle.commons.io.Files
-import org.beangle.commons.lang.SystemInfo
-import java.io.File
-import org.beangle.security.Securities
+import net.openurp.ecupl.spa.doc.web.decorator.WkPdfGenerator
+import org.beangle.cdi.bind.BindModule
 
-object DocFile {
-  private def fileName(path: String): String = {
-    var fileName =
-      if (path.contains("/")) {
-        Strings.substringAfterLast(path, "/")
-      } else {
-        path
-      }
-    fileName = Strings.replace(fileName, ".pdf", "")
-    fileName + "_" + Securities.user
+class DefaultModule extends BindModule {
+
+  protected override def binding(): Unit = {
+    bind(classOf[MyAction])
+    bind(classOf[StudentAction])
+    bind("web.Decorator.wkpdf", classOf[WkPdfGenerator])
   }
-
-  def html(path: String): File = {
-    new File(SystemInfo.tmpDir + Files./ + fileName(path) + ".html")
-  }
-
-  def pdf(path: String): File = {
-    new File(SystemInfo.tmpDir + Files./ + fileName(path) + ".pdf")
-  }
-
 }
