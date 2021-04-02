@@ -21,7 +21,7 @@
     <TABLE WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0">
       <tr>
         <td ALIGN="CENTER">
-         <div align='center'><img src="${b.static_url('urp','images/banner_long.png')}" style="height:25.5mm;width:183mm"/></div>
+         <div align='center'><img src="${b.static_url('local','images/banner_long.png')}" style="height:25.5mm;width:183mm"/></div>
          <div style="padding:0mm 10mm 0mm 10mm;height:722px;text-align:center;">
             <h1 ALIGN="CENTER"><span style="letter-spacing:20px">在读证明</span></h1>
             <p>&nbsp;</p>
@@ -41,7 +41,7 @@
      <table>
        <tr><td>
          <p style="margin-top:60px"><span style="font-size:15pt;letter-spacing:5px;">${b.now?string('yyyy年MM月dd日')}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
-        <img src="${b.static_url('urp','images/student_sig2.png')}" style="height:42mm;width:42mm;margin-left: 10mm;margin-top: -120px;"/>
+        <img src="${b.static_url('local','images/student_sig2.png')}" style="height:42mm;width:42mm;margin-left: 10mm;margin-top: -120px;"/>
        </td></tr>
      </table>
      </div>

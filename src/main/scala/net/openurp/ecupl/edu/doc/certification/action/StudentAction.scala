@@ -25,7 +25,7 @@ import org.beangle.webmvc.api.annotation.{action, param}
 import org.beangle.webmvc.api.view.{Status, View}
 import org.beangle.webmvc.entity.action.EntityAction
 import org.openurp.edu.base.model.Student
-import org.openurp.edu.base.web.ProjectSupport
+import org.openurp.edu.web.ProjectSupport
 import org.openurp.edu.program.domain.DefaultProgramMatcher
 import org.openurp.edu.program.model.Program
 
@@ -41,7 +41,7 @@ class StudentAction extends ActionSupport with EntityAction[Student] with Projec
       put("grade", GradeConverter.getGrade(std))
       put("std", std)
       put("program", getProgram(std))
-      forward("../zh")
+      forward(if (std.registed) "../zh" else "../no")
     }
   }
 
@@ -54,7 +54,7 @@ class StudentAction extends ActionSupport with EntityAction[Student] with Projec
       put("grade", GradeConverter.getGrade(std))
       put("std", std)
       put("program", getProgram(std))
-      forward("../en")
+      forward(if (std.registed) "../en" else "../no")
     }
   }
 

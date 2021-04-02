@@ -20,13 +20,14 @@ package net.openurp.ecupl.edu.doc.certification.action
 
 import net.openurp.ecupl.edu.doc.certification.service.GradeConverter
 import org.beangle.data.dao.OqlBuilder
+import org.beangle.security.Securities
 import org.beangle.webmvc.api.action.ActionSupport
 import org.beangle.webmvc.api.view.View
 import org.beangle.webmvc.entity.action.EntityAction
 import org.openurp.edu.base.model.Student
-import org.openurp.edu.base.web.ProjectSupport
 import org.openurp.edu.program.domain.DefaultProgramMatcher
 import org.openurp.edu.program.model.Program
+import org.openurp.edu.web.ProjectSupport
 
 class MyAction extends ActionSupport with EntityAction[Student] with ProjectSupport {
 
@@ -35,7 +36,7 @@ class MyAction extends ActionSupport with EntityAction[Student] with ProjectSupp
     put("grade", GradeConverter.getGrade(std))
     put("std", std)
     put("program", getProgram(std))
-    forward("../zh")
+    forward(if (std.registed) "../zh" else "../no")
   }
 
   def en(): View = {
@@ -43,7 +44,7 @@ class MyAction extends ActionSupport with EntityAction[Student] with ProjectSupp
     put("grade", GradeConverter.getGrade(std))
     put("std", std)
     put("program", getProgram(std))
-    forward("../en")
+    forward(if (std.registed) "../en" else "../no")
   }
 
 
@@ -59,6 +60,10 @@ class MyAction extends ActionSupport with EntityAction[Student] with ProjectSupp
         val ps = entityDao.search(query)
         ps.filter(DefaultProgramMatcher.isMatched(_, state)).headOption
     }
+  }
+
+  private def getStudent: Student = {
+    entityDao.findBy(classOf[Student], "user.code", List(Securities.user)).head
   }
 
 }

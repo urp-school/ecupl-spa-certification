@@ -21,7 +21,7 @@
         <TABLE WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0">
           <tr>
             <td ALIGN="CENTER">
-              <div align='center'><img src="${b.static_url('urp','images/banner_long.png')}" style="height:25.5mm;width:183mm"/></div>
+              <div align='center'><img src="${b.static_url('local','images/banner_long.png')}" style="height:25.5mm;width:183mm"/></div>
               <div style="padding:0mm 10mm 0mm 10mm; height: 622px; text-align: center;">
                 <h1 ALIGN="CENTER">
                   <span style="letter-spacing: 2px">Certification</span>
@@ -41,7 +41,7 @@
          <span style="FONT-SIZE: 10pt; letter-spacing:1px;text-align:center;display:block">East China University of Political Science and Law</span>
          <span style="FONT-SIZE: 10pt; letter-spacing: 1px;text-align:center;display:block">${b.now?string("yyyy-MM-dd")}</span>
          </p>
-        <img src="${b.static_url('urp','images/student_sig2.png')}" style="height:42mm;width:42mm;margin-left: 30mm;margin-top: -120px;"/>
+        <img src="${b.static_url('local','images/student_sig2.png')}" style="height:42mm;width:42mm;margin-left: 30mm;margin-top: -120px;"/>
      </div>
   </div>
 [@b.foot/]
