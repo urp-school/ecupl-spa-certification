@@ -3,7 +3,7 @@
   <parent>
     <groupId>org.openurp</groupId>
     <artifactId>openurp-parent</artifactId>
-    <version>0.3.28</version>
+    <version>0.4.14</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <groupId>net.openurp.ecupl</groupId>
@@ -13,19 +13,19 @@
   <name>Ecupl Edu Certification Webapp</name>
 
   <properties>
-    <openurp.api.version>0.17.0</openurp.api.version>
-    <openurp.boot.version>0.1.3</openurp.boot.version>
+    <openurp.api.version>0.23.0</openurp.api.version>
+    <openurp.starter.version>0.0.7</openurp.starter.version>
   </properties>
 
   <dependencies>
     <dependency>
-      <groupId>org.openurp.edu</groupId>
-      <artifactId>openurp-edu-boot</artifactId>
-      <version>${openurp.boot.version}</version>
+      <groupId>org.openurp.starter</groupId>
+      <artifactId>openurp-starter-web</artifactId>
+      <version>${openurp.starter.version}</version>
     </dependency>
     <dependency>
-      <groupId>org.openurp.edu.program</groupId>
-      <artifactId>openurp-edu-program-api</artifactId>
+      <groupId>org.openurp.edu</groupId>
+      <artifactId>openurp-edu-api</artifactId>
       <version>${openurp.api.version}</version>
     </dependency>
     <dependency>

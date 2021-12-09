@@ -2,7 +2,7 @@
 [#if grade=4 || grade > 4]
 <p ALIGN="left" style="margin-top:10px;font-size:15pt;line-height:65px;letter-spacing:1px;">
 ${std.user.name}同学系${std.project.school.name}&nbsp;&nbsp;${std.state.department.name}&nbsp;&nbsp;学院四年级全日制本科生，在校学习期间已基本修完&nbsp;&nbsp;
-${std.state.major.name}[#if std.state.direction??](${std.state.direction.name})[/#if]&nbsp;&nbsp;专业课程。根据国家教育部有关规定，将在完成毕业论文后于${(std.state.grade[0..3]?number)+4}年7月毕业。现该生正在修读最后一个学年的课程，一旦学分修满，必修课考核成绩平均绩点达到2.0以上，符合《华东政法大学授予本科毕业生学士学位实施细则》的有关规定，可授予${(program.degree.name)!"__"}学位。
+${std.state.major.name}[#if std.state.direction??](${std.state.direction.name})[/#if]&nbsp;&nbsp;专业课程。根据国家教育部有关规定，将在完成毕业论文后于${(std.graduateOn?string('yyyy'))!"--"}年7月毕业。现该生正在修读最后一个学年的课程，一旦学分修满，必修课考核成绩平均绩点达到2.0以上，符合《华东政法大学授予本科毕业生学士学位实施细则》的有关规定，可授予${(program.degree.name)!"__"}学位。
 </p>
 [#else]
 <p ALIGN="left" style="margin-top:10px;font-size:15pt;line-height:65px;letter-spacing:1px;">
