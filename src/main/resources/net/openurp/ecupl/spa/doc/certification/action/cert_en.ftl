@@ -27,7 +27,7 @@ y all the courses in ${getMajor(std)} and, in line with regulations by the Minis
  of ${getApp(std.person.gender)} graduation thesis. This student is working on the courses of ${getApp(std.person.gender)} last year of study and[#t/]
 , in line with the degree regulations of this university[#t/]
 , is to be awarded a degree of ${(program.degree.enName)!"__"} upon completion of all the courses req[#t/]
-uired with GPA of compulsory courses above 2.0 points.
+uired with GPA above 2.0 points.
 </p>
 [#else]
 <p ALIGN="left" style="margin-top:10px;FONT-SIZE:15pt;line-height:230%;letter-spacing:1px;">
